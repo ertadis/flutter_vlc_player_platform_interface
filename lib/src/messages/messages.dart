@@ -388,7 +388,8 @@ class SpuTracksMessage {
     result as List<Object?>;
     return SpuTracksMessage(
       viewId: result[0] as int?,
-      subtitles: (result[1] as Map<Object?, Object?>?)?.cast<Object?, Object?>(),
+      subtitles:
+          (result[1] as Map<Object?, Object?>?)?.cast<Object?, Object?>(),
     );
   }
 }
@@ -720,7 +721,8 @@ class RendererDevicesMessage {
     result as List<Object?>;
     return RendererDevicesMessage(
       viewId: result[0] as int?,
-      rendererDevices: (result[1] as Map<Object?, Object?>?)?.cast<Object?, Object?>(),
+      rendererDevices:
+          (result[1] as Map<Object?, Object?>?)?.cast<Object?, Object?>(),
     );
   }
 }
@@ -777,7 +779,6 @@ class RecordMessage {
   }
 }
 
-
 class _PigeonCodec extends StandardMessageCodec {
   const _PigeonCodec();
   @override
@@ -785,82 +786,82 @@ class _PigeonCodec extends StandardMessageCodec {
     if (value is ViewMessage) {
       buffer.putUint8(129);
       writeValue(buffer, value.encode());
-    } else     if (value is CreateMessage) {
+    } else if (value is CreateMessage) {
       buffer.putUint8(130);
       writeValue(buffer, value.encode());
-    } else     if (value is SetMediaMessage) {
+    } else if (value is SetMediaMessage) {
       buffer.putUint8(131);
       writeValue(buffer, value.encode());
-    } else     if (value is BooleanMessage) {
+    } else if (value is BooleanMessage) {
       buffer.putUint8(132);
       writeValue(buffer, value.encode());
-    } else     if (value is LoopingMessage) {
+    } else if (value is LoopingMessage) {
       buffer.putUint8(133);
       writeValue(buffer, value.encode());
-    } else     if (value is VolumeMessage) {
+    } else if (value is VolumeMessage) {
       buffer.putUint8(134);
       writeValue(buffer, value.encode());
-    } else     if (value is PlaybackSpeedMessage) {
+    } else if (value is PlaybackSpeedMessage) {
       buffer.putUint8(135);
       writeValue(buffer, value.encode());
-    } else     if (value is PositionMessage) {
+    } else if (value is PositionMessage) {
       buffer.putUint8(136);
       writeValue(buffer, value.encode());
-    } else     if (value is DurationMessage) {
+    } else if (value is DurationMessage) {
       buffer.putUint8(137);
       writeValue(buffer, value.encode());
-    } else     if (value is DelayMessage) {
+    } else if (value is DelayMessage) {
       buffer.putUint8(138);
       writeValue(buffer, value.encode());
-    } else     if (value is TrackCountMessage) {
+    } else if (value is TrackCountMessage) {
       buffer.putUint8(139);
       writeValue(buffer, value.encode());
-    } else     if (value is SnapshotMessage) {
+    } else if (value is SnapshotMessage) {
       buffer.putUint8(140);
       writeValue(buffer, value.encode());
-    } else     if (value is SpuTracksMessage) {
+    } else if (value is SpuTracksMessage) {
       buffer.putUint8(141);
       writeValue(buffer, value.encode());
-    } else     if (value is SpuTrackMessage) {
+    } else if (value is SpuTrackMessage) {
       buffer.putUint8(142);
       writeValue(buffer, value.encode());
-    } else     if (value is AddSubtitleMessage) {
+    } else if (value is AddSubtitleMessage) {
       buffer.putUint8(143);
       writeValue(buffer, value.encode());
-    } else     if (value is AudioTracksMessage) {
+    } else if (value is AudioTracksMessage) {
       buffer.putUint8(144);
       writeValue(buffer, value.encode());
-    } else     if (value is AudioTrackMessage) {
+    } else if (value is AudioTrackMessage) {
       buffer.putUint8(145);
       writeValue(buffer, value.encode());
-    } else     if (value is AddAudioMessage) {
+    } else if (value is AddAudioMessage) {
       buffer.putUint8(146);
       writeValue(buffer, value.encode());
-    } else     if (value is VideoTracksMessage) {
+    } else if (value is VideoTracksMessage) {
       buffer.putUint8(147);
       writeValue(buffer, value.encode());
-    } else     if (value is VideoTrackMessage) {
+    } else if (value is VideoTrackMessage) {
       buffer.putUint8(148);
       writeValue(buffer, value.encode());
-    } else     if (value is VideoScaleMessage) {
+    } else if (value is VideoScaleMessage) {
       buffer.putUint8(149);
       writeValue(buffer, value.encode());
-    } else     if (value is VideoAspectRatioMessage) {
+    } else if (value is VideoAspectRatioMessage) {
       buffer.putUint8(150);
       writeValue(buffer, value.encode());
-    } else     if (value is RendererServicesMessage) {
+    } else if (value is RendererServicesMessage) {
       buffer.putUint8(151);
       writeValue(buffer, value.encode());
-    } else     if (value is RendererScanningMessage) {
+    } else if (value is RendererScanningMessage) {
       buffer.putUint8(152);
       writeValue(buffer, value.encode());
-    } else     if (value is RendererDevicesMessage) {
+    } else if (value is RendererDevicesMessage) {
       buffer.putUint8(153);
       writeValue(buffer, value.encode());
-    } else     if (value is RenderDeviceMessage) {
+    } else if (value is RenderDeviceMessage) {
       buffer.putUint8(154);
       writeValue(buffer, value.encode());
-    } else     if (value is RecordMessage) {
+    } else if (value is RecordMessage) {
       buffer.putUint8(155);
       writeValue(buffer, value.encode());
     } else {
@@ -871,59 +872,59 @@ class _PigeonCodec extends StandardMessageCodec {
   @override
   Object? readValueOfType(int type, ReadBuffer buffer) {
     switch (type) {
-      case 129: 
+      case 129:
         return ViewMessage.decode(readValue(buffer)!);
-      case 130: 
+      case 130:
         return CreateMessage.decode(readValue(buffer)!);
-      case 131: 
+      case 131:
         return SetMediaMessage.decode(readValue(buffer)!);
-      case 132: 
+      case 132:
         return BooleanMessage.decode(readValue(buffer)!);
-      case 133: 
+      case 133:
         return LoopingMessage.decode(readValue(buffer)!);
-      case 134: 
+      case 134:
         return VolumeMessage.decode(readValue(buffer)!);
-      case 135: 
+      case 135:
         return PlaybackSpeedMessage.decode(readValue(buffer)!);
-      case 136: 
+      case 136:
         return PositionMessage.decode(readValue(buffer)!);
-      case 137: 
+      case 137:
         return DurationMessage.decode(readValue(buffer)!);
-      case 138: 
+      case 138:
         return DelayMessage.decode(readValue(buffer)!);
-      case 139: 
+      case 139:
         return TrackCountMessage.decode(readValue(buffer)!);
-      case 140: 
+      case 140:
         return SnapshotMessage.decode(readValue(buffer)!);
-      case 141: 
+      case 141:
         return SpuTracksMessage.decode(readValue(buffer)!);
-      case 142: 
+      case 142:
         return SpuTrackMessage.decode(readValue(buffer)!);
-      case 143: 
+      case 143:
         return AddSubtitleMessage.decode(readValue(buffer)!);
-      case 144: 
+      case 144:
         return AudioTracksMessage.decode(readValue(buffer)!);
-      case 145: 
+      case 145:
         return AudioTrackMessage.decode(readValue(buffer)!);
-      case 146: 
+      case 146:
         return AddAudioMessage.decode(readValue(buffer)!);
-      case 147: 
+      case 147:
         return VideoTracksMessage.decode(readValue(buffer)!);
-      case 148: 
+      case 148:
         return VideoTrackMessage.decode(readValue(buffer)!);
-      case 149: 
+      case 149:
         return VideoScaleMessage.decode(readValue(buffer)!);
-      case 150: 
+      case 150:
         return VideoAspectRatioMessage.decode(readValue(buffer)!);
-      case 151: 
+      case 151:
         return RendererServicesMessage.decode(readValue(buffer)!);
-      case 152: 
+      case 152:
         return RendererScanningMessage.decode(readValue(buffer)!);
-      case 153: 
+      case 153:
         return RendererDevicesMessage.decode(readValue(buffer)!);
-      case 154: 
+      case 154:
         return RenderDeviceMessage.decode(readValue(buffer)!);
-      case 155: 
+      case 155:
         return RecordMessage.decode(readValue(buffer)!);
       default:
         return super.readValueOfType(type, buffer);
@@ -935,9 +936,11 @@ class VlcPlayerApi {
   /// Constructor for [VlcPlayerApi].  The [binaryMessenger] named argument is
   /// available for dependency injection.  If it is left null, the default
   /// BinaryMessenger will be used which routes to the host platform.
-  VlcPlayerApi({BinaryMessenger? binaryMessenger, String messageChannelSuffix = ''})
+  VlcPlayerApi(
+      {BinaryMessenger? binaryMessenger, String messageChannelSuffix = ''})
       : __pigeon_binaryMessenger = binaryMessenger,
-        __pigeon_messageChannelSuffix = messageChannelSuffix.isNotEmpty ? '.$messageChannelSuffix' : '';
+        __pigeon_messageChannelSuffix =
+            messageChannelSuffix.isNotEmpty ? '.$messageChannelSuffix' : '';
   final BinaryMessenger? __pigeon_binaryMessenger;
 
   static const MessageCodec<Object?> pigeonChannelCodec = _PigeonCodec();
@@ -945,8 +948,10 @@ class VlcPlayerApi {
   final String __pigeon_messageChannelSuffix;
 
   Future<void> initialize() async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.initialize$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeon.VlcPlayerApi.initialize$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -967,8 +972,10 @@ class VlcPlayerApi {
   }
 
   Future<void> create(CreateMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.create$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeon.VlcPlayerApi.create$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -989,8 +996,10 @@ class VlcPlayerApi {
   }
 
   Future<void> dispose(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.dispose$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeon.VlcPlayerApi.dispose$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1011,8 +1020,10 @@ class VlcPlayerApi {
   }
 
   Future<void> setStreamUrl(SetMediaMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.setStreamUrl$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.setStreamUrl$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1033,8 +1044,10 @@ class VlcPlayerApi {
   }
 
   Future<void> play(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.play$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.play$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1055,8 +1068,10 @@ class VlcPlayerApi {
   }
 
   Future<void> pause(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.pause$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.pause$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1077,8 +1092,10 @@ class VlcPlayerApi {
   }
 
   Future<void> stop(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.stop$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.stop$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1099,8 +1116,10 @@ class VlcPlayerApi {
   }
 
   Future<BooleanMessage> isPlaying(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.isPlaying$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.isPlaying$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1126,8 +1145,10 @@ class VlcPlayerApi {
   }
 
   Future<BooleanMessage> isSeekable(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.isSeekable$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.isSeekable$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1153,8 +1174,10 @@ class VlcPlayerApi {
   }
 
   Future<void> setLooping(LoopingMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.setLooping$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.setLooping$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1175,8 +1198,10 @@ class VlcPlayerApi {
   }
 
   Future<void> seekTo(PositionMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.seekTo$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.seekTo$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1197,8 +1222,10 @@ class VlcPlayerApi {
   }
 
   Future<PositionMessage> position(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.position$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.position$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1224,8 +1251,10 @@ class VlcPlayerApi {
   }
 
   Future<DurationMessage> duration(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.duration$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.duration$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1251,8 +1280,10 @@ class VlcPlayerApi {
   }
 
   Future<void> setVolume(VolumeMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.setVolume$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.setVolume$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1273,8 +1304,10 @@ class VlcPlayerApi {
   }
 
   Future<VolumeMessage> getVolume(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.getVolume$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.getVolume$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1300,8 +1333,10 @@ class VlcPlayerApi {
   }
 
   Future<void> setPlaybackSpeed(PlaybackSpeedMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.setPlaybackSpeed$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.setPlaybackSpeed$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1322,8 +1357,10 @@ class VlcPlayerApi {
   }
 
   Future<PlaybackSpeedMessage> getPlaybackSpeed(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.getPlaybackSpeed$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.getPlaybackSpeed$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1349,8 +1386,10 @@ class VlcPlayerApi {
   }
 
   Future<SnapshotMessage> takeSnapshot(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.takeSnapshot$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.takeSnapshot$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1376,8 +1415,10 @@ class VlcPlayerApi {
   }
 
   Future<TrackCountMessage> getSpuTracksCount(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.getSpuTracksCount$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.getSpuTracksCount$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1403,8 +1444,10 @@ class VlcPlayerApi {
   }
 
   Future<SpuTracksMessage> getSpuTracks(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.getSpuTracks$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.getSpuTracks$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1430,8 +1473,10 @@ class VlcPlayerApi {
   }
 
   Future<void> setSpuTrack(SpuTrackMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.setSpuTrack$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.setSpuTrack$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1452,8 +1497,10 @@ class VlcPlayerApi {
   }
 
   Future<SpuTrackMessage> getSpuTrack(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.getSpuTrack$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.getSpuTrack$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1479,8 +1526,10 @@ class VlcPlayerApi {
   }
 
   Future<void> setSpuDelay(DelayMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.setSpuDelay$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.setSpuDelay$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1501,8 +1550,10 @@ class VlcPlayerApi {
   }
 
   Future<DelayMessage> getSpuDelay(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.getSpuDelay$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.getSpuDelay$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1528,8 +1579,10 @@ class VlcPlayerApi {
   }
 
   Future<void> addSubtitleTrack(AddSubtitleMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.addSubtitleTrack$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.addSubtitleTrack$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1550,8 +1603,10 @@ class VlcPlayerApi {
   }
 
   Future<TrackCountMessage> getAudioTracksCount(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.getAudioTracksCount$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.getAudioTracksCount$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1577,8 +1632,10 @@ class VlcPlayerApi {
   }
 
   Future<AudioTracksMessage> getAudioTracks(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.getAudioTracks$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.getAudioTracks$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1604,8 +1661,10 @@ class VlcPlayerApi {
   }
 
   Future<void> setAudioTrack(AudioTrackMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.setAudioTrack$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.setAudioTrack$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1626,8 +1685,10 @@ class VlcPlayerApi {
   }
 
   Future<AudioTrackMessage> getAudioTrack(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.getAudioTrack$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.getAudioTrack$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1653,8 +1714,10 @@ class VlcPlayerApi {
   }
 
   Future<void> setAudioDelay(DelayMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.setAudioDelay$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.setAudioDelay$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1675,8 +1738,10 @@ class VlcPlayerApi {
   }
 
   Future<DelayMessage> getAudioDelay(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.getAudioDelay$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.getAudioDelay$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1702,8 +1767,10 @@ class VlcPlayerApi {
   }
 
   Future<void> addAudioTrack(AddAudioMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.addAudioTrack$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.addAudioTrack$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1724,8 +1791,10 @@ class VlcPlayerApi {
   }
 
   Future<TrackCountMessage> getVideoTracksCount(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.getVideoTracksCount$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.getVideoTracksCount$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1751,8 +1820,10 @@ class VlcPlayerApi {
   }
 
   Future<VideoTracksMessage> getVideoTracks(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.getVideoTracks$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.getVideoTracks$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1778,8 +1849,10 @@ class VlcPlayerApi {
   }
 
   Future<void> setVideoTrack(VideoTrackMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.setVideoTrack$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.setVideoTrack$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1800,8 +1873,10 @@ class VlcPlayerApi {
   }
 
   Future<VideoTrackMessage> getVideoTrack(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.getVideoTrack$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.getVideoTrack$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1827,8 +1902,10 @@ class VlcPlayerApi {
   }
 
   Future<void> setVideoScale(VideoScaleMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.setVideoScale$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.setVideoScale$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1849,8 +1926,10 @@ class VlcPlayerApi {
   }
 
   Future<VideoScaleMessage> getVideoScale(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.getVideoScale$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.getVideoScale$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1876,8 +1955,10 @@ class VlcPlayerApi {
   }
 
   Future<void> setVideoAspectRatio(VideoAspectRatioMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.setVideoAspectRatio$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.setVideoAspectRatio$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1898,8 +1979,10 @@ class VlcPlayerApi {
   }
 
   Future<VideoAspectRatioMessage> getVideoAspectRatio(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.getVideoAspectRatio$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.getVideoAspectRatio$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1924,9 +2007,12 @@ class VlcPlayerApi {
     }
   }
 
-  Future<RendererServicesMessage> getAvailableRendererServices(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.getAvailableRendererServices$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+  Future<RendererServicesMessage> getAvailableRendererServices(
+      ViewMessage msg) async {
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.getAvailableRendererServices$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1952,8 +2038,10 @@ class VlcPlayerApi {
   }
 
   Future<void> startRendererScanning(RendererScanningMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.startRendererScanning$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.startRendererScanning$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1974,8 +2062,10 @@ class VlcPlayerApi {
   }
 
   Future<void> stopRendererScanning(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.stopRendererScanning$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.stopRendererScanning$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -1996,8 +2086,10 @@ class VlcPlayerApi {
   }
 
   Future<RendererDevicesMessage> getRendererDevices(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.getRendererDevices$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.getRendererDevices$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -2023,8 +2115,10 @@ class VlcPlayerApi {
   }
 
   Future<void> castToRenderer(RenderDeviceMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.castToRenderer$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.castToRenderer$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -2045,8 +2139,10 @@ class VlcPlayerApi {
   }
 
   Future<BooleanMessage> startRecording(RecordMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.startRecording$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.startRecording$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
@@ -2072,8 +2168,10 @@ class VlcPlayerApi {
   }
 
   Future<BooleanMessage> stopRecording(ViewMessage msg) async {
-    final String __pigeon_channelName = 'dev.flutter.pigeon.flutter_vlc_player_platform_interface.VlcPlayerApi.stopRecording$__pigeon_messageChannelSuffix';
-    final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
+    final String __pigeon_channelName =
+        'dev.flutter.pigeonVlcPlayerApi.stopRecording$__pigeon_messageChannelSuffix';
+    final BasicMessageChannel<Object?> __pigeon_channel =
+        BasicMessageChannel<Object?>(
       __pigeon_channelName,
       pigeonChannelCodec,
       binaryMessenger: __pigeon_binaryMessenger,
